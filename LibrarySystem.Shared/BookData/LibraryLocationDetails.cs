@@ -2,7 +2,7 @@
 
 namespace LibrarySystem.Repository.Models;
 
-public class LibraryLocation : BaseEntity
+public class LibraryLocationDetails
 {
     [Key]
     public int LocationId { get; set; }
