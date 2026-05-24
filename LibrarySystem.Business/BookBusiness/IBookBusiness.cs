@@ -1,0 +1,13 @@
+﻿using LibrarySystem.Shared.BookData;
+
+namespace LibrarySystem.Business.BookBusiness
+{
+    public interface IBookBusiness
+    {
+        Task<bool> AddBook(BookDetails book);
+        Task<bool> EditBooks(BookDetails book);
+        Task<BookDetails> GetBookDetails(int id);
+        Task<List<BookDetails>> GetBookList();
+        
+    }
+}

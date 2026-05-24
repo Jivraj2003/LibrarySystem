@@ -1,0 +1,46 @@
+﻿﻿@using LibrarySystem.Shared.BookData
+@model BookDetails
+<h1>Edit Book</h1>
+<form asp-controller="Book" asp-action="EditBook" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name">Book Name</label>
+        <input type="text" asp-for="Name" placeholder="Enter Book Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author">Author Name</label>
+        <input type="text" asp-for="Author" placeholder="Enter Author Name" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Publication">Publication</label>
+        <input type="text" asp-for="Publication" placeholder="Enter Publication Name" class="form-control" />
+        <span asp-validation-for="Publication" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="hidden" asp-for="BookId" />
+        <input type="submit" value="Submit" class="btn btn-success" />
+    </div>
+
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    @* <script>
+    $(document).ready(function(){
+        $("#Name").rules("add", {
+            required: true,
+            messages: {
+                required: "Name is required (custom message)"
+            },
+        }); 
+    });
+</script> *@
+
+}
